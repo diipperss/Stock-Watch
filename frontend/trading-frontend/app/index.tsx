@@ -37,7 +37,7 @@ export default function LoginScreen() {
 
   return (
     <View style={styles.backgroundContainer}>
-      <Text style={styles.header}>App Name</Text>
+      <Text style={styles.header}>Stock Watch</Text>
       <View style={styles.subContainer}>
         {/* <Text style={styles.subHeader}>Welcome Back</Text> */}
         <TextInput style={{...styles.input, marginTop: '15%'}}
