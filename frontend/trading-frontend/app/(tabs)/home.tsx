@@ -46,8 +46,8 @@ export default function HomeScreen() {
     const fetchWallets = async () => {
       try {
         console.log('userid:', user.userId);
-        const response = await fetch(`http://192.168.1.16:8081/api/wallets/${user.userId}`);
-        const total_response = await fetch(`http://192.168.1.16:8081/api/wallets/balance/${user.userId}`);
+        const response = await fetch(`http://localhost:8081/api/wallets/${user.userId}`);
+        const total_response = await fetch(`http://localhost:8081/api/wallets/balance/${user.userId}`);
         const data = await response.json();
         const total_data = await total_response.json();
 

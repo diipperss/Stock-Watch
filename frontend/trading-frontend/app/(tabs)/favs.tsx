@@ -35,7 +35,7 @@ export default function AllStocksScreen() {
     if (!user) return; 
     try {
       console.log('userid:', user.userId);
-      const res = await fetch(`http://192.168.1.16:8081/api/favorites/${user.userId}`);
+      const res = await fetch(`http://localhost:8081/api/favorites/${user.userId}`);
       const data = await res.json();
       console.log('Favorites data:', data);
 
@@ -46,7 +46,7 @@ export default function AllStocksScreen() {
 
 
       // Only fetch stocks once favorites are known
-      fetchStocks(favorites);
+      fetchStocks(favoriteSymbols);
     } catch (error) {
       console.error("Error fetching favorites:", error);
     }
@@ -101,7 +101,7 @@ const fetchStocks = async (favoriteSymbols: string[]) => {
       try {
         if (isFavorite) {
           // DELETE favorite
-          await fetch(`http://192.168.1.16:8081/api/favorites/delete/${user.userId}/${symbol}`, {
+          await fetch(`http://localhost:8081/api/favorites/delete/${user.userId}/${symbol}`, {
             method: 'DELETE',
           });
           setFavorites((prev) => prev.filter((s) => s !== symbol));

@@ -12,7 +12,7 @@ export default function LoginScreen() {
     console.log('Username:', username);
     console.log('Password:', password);
      try {
-      const res = await fetch('http://192.168.1.16:8081/api/auth/login', {
+      const res = await fetch('http://localhost:8081/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
